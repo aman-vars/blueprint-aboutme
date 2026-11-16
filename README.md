@@ -1,6 +1,6 @@
-# Aman Varshney — portfolio
+# Aman Varshney Portfolio
 
-A compact, responsive, single-page React + TypeScript + Vite portfolio. Project and profile data are local and typed. No backend or Supabase setup is included.
+Built with React + TypeScript + Vite. Project and profile data are local and typed. No backend or Supabase setup is included.
 
 ## Run locally
 
@@ -28,5 +28,3 @@ Open the printed preview URL (normally http://localhost:4173).
 - `src/App.tsx`: page structure and shared labels.
 - `src/styles.css`: responsive layout, colors, and typography.
 - `index.html`: browser title and search description.
-
-The three demo URLs are currently marked as pending. No project capabilities, job titles, dates, or outcome metrics beyond those supplied by Aman are inferred. Project tags include methods as well as technologies. Google Fonts are optional; local sans-serif fallbacks render when offline.
