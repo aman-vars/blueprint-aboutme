@@ -1,30 +1,28 @@
 # Aman Varshney Portfolio
 
-Built with React + TypeScript + Vite. Project and profile data are local and typed. No backend or Supabase setup is included.
+A responsive personal portfolio featuring Memory Wrap, Pancake, and BCTumor, alongside experience at IBM and Uber.
 
-## Run locally
+The single-page layout brings together a short introduction, GitHub and LinkedIn links, project contributions, and industry experience. A white and blue theme and responsive project cards keep it compact across desktop and mobile.
 
-```sh
-npm install
-npm run dev
-```
+Built with React, TypeScript, Vite, Supabase, and simple CSS, without a component library.
 
-Open the Local URL printed by Vite (normally http://localhost:5173).
+## Featured projects
 
-## Check and preview the production build
+- **Memory Wrap** — Top-K and clustering strategies for interpretable, self-explainable neural networks.
+- **Pancake** — a Python reimplementation of a cloud security framework using key replication, replica swapping, and batching.
+- **BCTumor** — a U-Net model for MRI tumor classification and segmentation, with a focus on preprocessing and data augmentation.
 
-```sh
-npm run lint
-npm run build
-npm run preview
-```
+## Project data
 
-Open the printed preview URL (normally http://localhost:4173).
+Supabase provides published projects in display order. Anonymous visitors have read-only access to published rows. Typed local data serves as a fallback when Supabase is unconfigured or a request fails; a successful response with no published projects shows an empty state. Missing demo URLs remain clearly marked as pending.
 
-## Edit content
+## Core files
 
-- `src/data/profile.ts`: name, bio, social URLs, and experience descriptions.
-- `src/data/projects.ts`: typed project records, descriptions, contributions, methods, repository URLs, and demo URLs. Set missing URLs to `null`; the page labels them as pending.
-- `src/App.tsx`: page structure and shared labels.
-- `src/styles.css`: responsive layout, colors, and typography.
-- `index.html`: browser title and search description.
+- `src/data/profile.ts` — bio, experience, and social links.
+- `src/data/projects.ts` — local fallback projects.
+- `src/lib/` — typed Supabase client and project loader.
+- `src/hooks/useProjects.ts` — project loading state and request lifecycle.
+- `src/App.tsx` — page sections and project cards.
+- `src/styles.css` — styling and responsive layout.
+- `supabase/` — table migration, published-only anonymous read policy, and project seeds.
+- `.env.example` — Supabase environment variable placeholders.
