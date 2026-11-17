@@ -1,5 +1,5 @@
 import { profile } from './data/profile'
-import { projects } from './data/projects'
+import { useProjects } from './hooks/useProjects'
 
 function ProjectLink({ url, label, project }: { url: string | null; label: string; project: string }) {
   return url ? (
@@ -10,6 +10,8 @@ function ProjectLink({ url, label, project }: { url: string | null; label: strin
 }
 
 export default function App() {
+  const projects = useProjects()
+
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
@@ -32,7 +34,11 @@ export default function App() {
             <div className="section-heading">
               <h2 id="projects-heading">Featured projects</h2>
             </div>
-            <div className="project-grid">
+            {projects === null ? (
+              <p className="project-description" role="status">Loading projects…</p>
+            ) : projects.length === 0 ? (
+              <p className="project-description" role="status">No featured projects are published yet.</p>
+            ) : <div className="project-grid">
               {projects.map((project, index) => (
                 <article className="project" key={project.id}>
                   <div className="project-topline"><span className="project-number">0{index + 1}</span><span>{project.category}</span></div>
@@ -51,7 +57,7 @@ export default function App() {
                   </div>
                 </article>
               ))}
-            </div>
+            </div>}
           </section>
 
           <section id="experience" className="section experience-section" aria-labelledby="experience-heading">
